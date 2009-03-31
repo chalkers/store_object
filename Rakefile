@@ -1,6 +1,6 @@
 task :default => :test
 
 task :test do
-    load "storeobject.rb"
+    load "store_object.rb"
     Dir["tests/**/*.rb"].each { |test| load test }
 end
