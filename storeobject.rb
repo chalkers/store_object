@@ -18,11 +18,14 @@ class StoreObject
   end
   
   def self.class_store
-    self.name.downcase
+    class_store = self.name.downcase
+    class_store_location = store + "/" + self.name.downcase
+    FileUtils.mkdir_p(class_store_location) if !File.exist?(class_store_location)
+    class_store
   end
   
   def class_store
-    self.class.name.downcase
+    self.class.class_store
   end
   
   def save
