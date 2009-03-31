@@ -6,7 +6,7 @@ end
 class StoreObjectTest < Test::Unit::TestCase
   
   def setup
-    ENV["storeobject_location"] = "tmp/store"
+    ENV["storeobject_location"] ||= "tmp/store"
     FileUtils.mkdir_p ENV["storeobject_location"]
     @name = "test_name"
   end
